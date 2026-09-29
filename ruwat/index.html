@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المُحَقِّق — فهرس الرواة</title>
+<meta name="description" content="فهرس الرواة الذين درسهم المحقق، والحكم على كل راوٍ بحسب منهجنا.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body data-base="../" data-active="ruwat" data-footer="كل اسم راوٍ في الموقع رابطٌ يفتح بطاقته">
+
+<main>
+<div class="container page" data-filter-scope>
+
+  <div>
+    <h1 style="font-size:38px">فهرس الرواة</h1>
+    <p class="intro" style="margin-top:6px">الرواة الذين درسناهم في أبحاث الموقع، والحكم على كل راوٍ بحسب منهجنا. اضغط على الاسم لفتح بطاقته.</p>
+  </div>
+
+  <form class="searchbar" role="search" onsubmit="return false">
+    <label for="qf">ابحث عن راوٍ:</label>
+    <input id="qf" type="search" data-search placeholder="بالاسم أو الكنية أو اللقب أو النسبة…" autocomplete="off">
+    <button type="submit" class="btn-solid">بحث</button>
+  </form>
+
+  <div class="filterbox">
+    <div class="filter-row" data-filter-group="verdict">
+      <span class="filter-label">الحكم بحسب منهجنا:</span>
+      <button type="button" class="chip on" data-value="" aria-pressed="true">الكل</button>
+      <button type="button" class="chip" data-value="thiqa">ثقة</button>
+      <button type="button" class="chip" data-value="up">مختلف فيه والتعديل راجح</button>
+      <button type="button" class="chip" data-value="down">مختلف فيه والجرح راجح</button>
+      <button type="button" class="chip" data-value="bad">مجروح</button>
+      <button type="button" class="chip" data-value="unknown">مجهول</button>
+    </div>
+    <div class="filter-row" data-filter-group="alert">
+      <span class="filter-label">التنبيهات:</span>
+      <button type="button" class="chip on" data-value="" aria-pressed="true">الكل</button>
+      <button type="button" class="chip" data-value="kufi">كوفي</button>
+      <button type="button" class="chip" data-value="mudalis">مدلس</button>
+      <button type="button" class="chip" data-value="mukhtalit">مختلط</button>
+      <button type="button" class="chip" data-value="weak">سيئ الحفظ</button>
+      <button type="button" class="chip" data-value="bidah">متهم ببدعة</button>
+      <button type="button" class="chip" data-value="none">لا تنبيهات</button>
+    </div>
+    <div class="filter-row" data-filter-group="century">
+      <span class="filter-label">القرن:</span>
+      <button type="button" class="chip on" data-value="" aria-pressed="true">الكل</button>
+      <button type="button" class="chip" data-value="1">الأول</button>
+      <button type="button" class="chip" data-value="2">الثاني</button>
+      <button type="button" class="chip" data-value="3">الثالث</button>
+      <button type="button" class="chip" data-value="4">الرابع فما بعده</button>
+    </div>
+    <div class="filter-note">الكوفي والمدلس والمختلط <strong style="color:var(--navy)">تنبيهات لا أحكام</strong>؛ ولون العلامة بجانب الاسم هو لون عقدته في المشجرة.</div>
+  </div>
+
+  <div class="result-bar">
+    <span>النتائج: <b data-count>2</b> راويًا</span>
+    <span style="font-size:14px;color:#6a6a62">مرتبون بحسب الحروف</span>
+  </div>
+
+  <div>
+    <div class="rawi-head"><span>العلامة</span><span>الراوي</span><span>الطبقة والوفاة</span><span>التنبيهات</span><span>الحكم</span><span style="text-align:center">الأبحاث</span></div>
+    <div class="list" style="gap:10px;margin-top:10px">
+      <!-- لإضافة راوٍ: انسخ صفًّا كاملًا وغيّر data-verdict و data-alert و data-century والنص، ولون العلامة (mark) بلون عقدته -->
+
+      <a class="rawi-row" href="misal/" data-item data-verdict="up" data-alert="kufi" data-century="3">
+        <span class="mark" style="background:#6a3aaa;border-color:#9b59b6"></span>
+        <span><span class="r-name">زيد بن الحُبَاب العُكْلي <span class="demo-badge">مثال للعرض</span></span><span class="r-kunya">العُكْلي، الكوفي</span></span>
+        <span class="r-tab">الطبقة التاسعة<br>ت ٢٠٣هـ</span>
+        <span class="alerts"><span class="alert-tag alert-kufi">كوفي</span></span>
+        <span class="r-judg j-up">مختلف فيه والتعديل راجح<small>بحسب منهجنا</small></span>
+        <span class="r-cnt">—</span>
+      </a>
+
+      <a class="rawi-row" href="misal/" data-item data-verdict="unknown" data-alert="none" data-century="">
+        <span class="mark" style="background:#c94040;border-color:#a02020"></span>
+        <span><span class="r-name">عُبَيد بن بِشر <span class="demo-badge">مثال للعرض</span></span><span class="r-kunya">مدار حديث بِشر الغَنَوي</span></span>
+        <span class="r-tab">—</span>
+        <span class="alerts">لا تنبيهات</span>
+        <span class="r-judg j-bad">مجهول<small>بحسب منهجنا</small></span>
+        <span class="r-cnt">١</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="empty-msg" data-empty hidden>لا يوجد رواة مطابقون. جرّب تخفيف التصفية أو تغيير كلمة البحث.</div>
+
+</div>
+</main>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

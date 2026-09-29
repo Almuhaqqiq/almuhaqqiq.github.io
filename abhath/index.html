@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المُحَقِّق — الأبحاث</title>
+<meta name="description" content="أبحاث المحقق في أسانيد الأحاديث، مع البحث بالكلمة والتصفية بالحكم والدرجة والموضوع.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body data-base="../" data-active="abhath">
+
+<main>
+<div class="container page" data-filter-scope>
+
+  <h1>الأبحاث</h1>
+
+  <form class="searchbar" role="search" onsubmit="return false">
+    <label for="q">ابحث في المتن أو الطرف:</label>
+    <input id="q" type="search" data-search placeholder="اكتب طرفًا من الحديث…" autocomplete="off">
+    <button type="submit" class="btn-solid">بحث</button>
+  </form>
+
+  <div class="filterbox">
+    <div class="filter-row" data-filter-group="verdict">
+      <span class="filter-label">الحكم بحسب منهجنا:</span>
+      <button type="button" class="chip on" data-value="" aria-pressed="true">الكل</button>
+      <button type="button" class="chip c-green" data-value="green">صحيح لذاته</button>
+      <button type="button" class="chip c-grey" data-value="white">مقبول غير صحيح بذاته</button>
+      <button type="button" class="chip c-yellow" data-value="yellow">غير مقبول</button>
+      <button type="button" class="chip c-red" data-value="red">موضوع أو لا أصل له</button>
+    </div>
+    <div class="filter-row" data-filter-group="tier">
+      <span class="filter-label">الدرجة:</span>
+      <button type="button" class="chip on" data-value="" aria-pressed="true">الكل</button>
+      <button type="button" class="chip" data-value="bukhari">في البخاري برواية أبي ذر</button>
+      <button type="button" class="chip" data-value="muwatta">في الموطأ دون البخاري</button>
+      <button type="button" class="chip" data-value="muslim">انفرد به مسلم</button>
+      <button type="button" class="chip" data-value="sunan">انفرد به أصحاب السنن</button>
+      <button type="button" class="chip" data-value="other">انفرد به غيرهم</button>
+    </div>
+    <div class="filter-row" data-filter-group="topic">
+      <span class="filter-label">الموضوع:</span>
+      <button type="button" class="chip on" data-value="" aria-pressed="true">الكل</button>
+      <button type="button" class="chip" data-value="aqida">عقيدة</button>
+      <button type="button" class="chip" data-value="fadail">فضائل</button>
+      <button type="button" class="chip" data-value="ibadat">عبادات</button>
+      <button type="button" class="chip" data-value="fitan">فتن</button>
+      <button type="button" class="chip" data-value="sira">سيرة</button>
+    </div>
+  </div>
+
+  <div class="result-bar">
+    <span>النتائج: <b data-count>3</b> بحثًا</span>
+    <a href="mashhura/">أحاديث مشهورة لا تثبت بحسب منهجنا ←</a>
+  </div>
+
+  <div class="list">
+    <!-- لإضافة بحث جديد: انسخ بطاقة كاملة، وغيّر data-verdict (green/white/yellow/red) و data-tier و data-topic والرابط والنص -->
+
+    <a class="row-card v-yellow" href="misal/" data-item data-verdict="yellow" data-tier="muslim" data-topic="fitan">
+      <span class="dot"></span>
+      <div class="r-main">
+        <div class="r-title">زيادة «وإن ضُرب ظهرك وأُخذ مالك» <span class="demo-badge">مثال للعرض</span></div>
+        <div class="r-sub">من حديث حذيفة بن اليمان في لزوم الجماعة</div>
+      </div>
+      <div class="r-side"><span class="r-verdict">غير مقبول بحسب منهجنا</span><span class="tier">انفرد به مسلم</span></div>
+    </a>
+
+    <a class="row-card v-green" href="misal/" data-item data-verdict="green" data-tier="bukhari" data-topic="fitan">
+      <span class="dot"></span>
+      <div class="r-main">
+        <div class="r-title">«تلزم جماعة المسلمين وإمامهم» <span class="demo-badge">مثال للعرض</span></div>
+        <div class="r-sub">أصل حديث حذيفة في الفتن</div>
+      </div>
+      <div class="r-side"><span class="r-verdict">صحيح لذاته بحسب منهجنا</span><span class="tier">في البخاري برواية أبي ذر</span></div>
+    </a>
+
+    <a class="row-card v-yellow" href="misal/" data-item data-verdict="yellow" data-tier="other" data-topic="">
+      <span class="dot"></span>
+      <div class="r-main">
+        <div class="r-title">حديث بِشْر الغَنَوي <span class="demo-badge">مثال للعرض</span></div>
+        <div class="r-sub">مداره على عُبَيد بن بِشر — مجهول الحال</div>
+      </div>
+      <div class="r-side"><span class="r-verdict">غير مقبول بحسب منهجنا</span><span class="tier">انفرد به غيرهم</span></div>
+    </a>
+  </div>
+
+  <div class="empty-msg" data-empty hidden>لا توجد أبحاث مطابقة. جرّب تخفيف التصفية أو تغيير كلمة البحث.</div>
+
+</div>
+</main>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
