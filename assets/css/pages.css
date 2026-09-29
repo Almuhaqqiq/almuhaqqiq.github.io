@@ -2,6 +2,16 @@
 
 [hidden] { display: none !important; }
 
+/* ---------- محتوى مؤقت (placeholder) ----------
+   كل عنصر عليه class="placeholder" أو "internal-note" أو "demo-badge" مخفي عن الزوار.
+   لإظهارها كلها أثناء العمل: أضف class="show-drafts" إلى وسم <body> في الصفحة.
+   وعند الإطلاق الحقيقي: احذف العنصر المؤقت نفسه أو استبدله بالمحتوى الحقيقي. */
+body:not(.show-drafts) .placeholder,
+body:not(.show-drafts) .internal-note,
+body:not(.show-drafts) .demo-badge { display: none !important; }
+.soon-msg { background: var(--panel); border: 1px dashed var(--gold); border-radius: 6px; padding: 22px; text-align: center; color: var(--text-muted); font-size: 17px; }
+body.show-drafts .soon-msg { display: none; }
+
 /* منع تجاوز حقول الإدخال لعرض الهاتف */
 input, select, textarea { max-width: 100%; min-width: 0; }
 .searchbar input[type=search], .searchbar input[type=text] { min-width: 0; width: 100%; }

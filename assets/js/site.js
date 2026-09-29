@@ -128,10 +128,15 @@
   }
 
   document.querySelectorAll('[data-filter-scope]').forEach(function (scope) {
-    var items = Array.prototype.slice.call(scope.querySelectorAll('[data-item]'));
+    var draftsOn = body.classList.contains('show-drafts');
+    // العناصر المؤقتة (class="placeholder") لا تُحسب ما لم يكن show-drafts مفعّلًا
+    var items = Array.prototype.slice.call(scope.querySelectorAll('[data-item]'))
+      .filter(function (it) { return draftsOn || !it.classList.contains('placeholder'); });
     var input = scope.querySelector('[data-search]');
     var count = scope.querySelector('[data-count]');
     var empty = scope.querySelector('[data-empty]');
+    var soon = scope.querySelector('[data-soon]');   // رسالة «قيد الإعداد» حين لا توجد عناصر حقيقية
+    if (soon) soon.hidden = items.length !== 0;
     var state = {};   // group -> value ('' = الكل)
 
     items.forEach(function (it) { it._text = norm(it.textContent + ' ' + (it.getAttribute('data-keys') || '')); });
@@ -150,7 +155,7 @@
         if (ok) shown++;
       });
       if (count) count.textContent = shown;
-      if (empty) empty.hidden = shown !== 0;
+      if (empty) empty.hidden = shown !== 0 || items.length === 0;
     }
 
     scope.querySelectorAll('[data-filter-group]').forEach(function (grp) {
