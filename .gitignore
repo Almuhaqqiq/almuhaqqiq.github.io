@@ -8,3 +8,8 @@ README.md
 # Sample/template pages - kept locally, not published
 abhath/misal/
 ruwat/misal/
+
+# More internal files
+docs/
+Design.pdf
+/*.png
