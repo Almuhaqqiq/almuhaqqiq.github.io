@@ -114,6 +114,28 @@
     });
   });
 
+  /* ---------- 3-ج) نموذج الملاحظات (Formspree) ---------- */
+  document.querySelectorAll('form[data-contact-form]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = form.querySelector('[data-form-status]');
+      var btn = form.querySelector('button[type=submit]');
+      var url = form.getAttribute('action') || '';
+      if (url.indexOf('REPLACE_ME') !== -1) return;          // لم يُفعَّل بعد
+      var note = form.querySelector('[name=note]');
+      if (note && !note.value.trim()) { status.textContent = 'اكتب ملاحظتك أولًا.'; note.focus(); return; }
+      btn.disabled = true; status.textContent = 'جارٍ الإرسال…';
+      fetch(url, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function (r) {
+          if (!r.ok) throw new Error('send failed');
+          form.reset();
+          status.textContent = 'وصلتنا ملاحظتك، جزاك الله خيرًا. سننظر فيها، ونُثبت التصويب إن ثبت الخطأ.';
+        })
+        .catch(function () { status.textContent = 'تعذّر الإرسال. حاول مرة أخرى بعد قليل.'; })
+        .then(function () { btn.disabled = false; });
+    });
+  });
+
   /* ---------- 4) البحث والتصفية ---------- */
   // تطبيع النص العربي: حذف التشكيل، وتوحيد الألف والياء والتاء المربوطة
   function norm(s) {

@@ -9,6 +9,10 @@
 body:not(.show-drafts) .placeholder,
 body:not(.show-drafts) .internal-note,
 body:not(.show-drafts) .demo-badge { display: none !important; }
+.quote { font-size: 16px; line-height: 2; color: var(--text); }
+.inference { font-size: 15px; line-height: 1.9; color: var(--text-soft); background: var(--bg); border-radius: 4px; padding: 8px 12px; margin-top: 10px !important; }
+.inference strong { color: var(--gold-dark); }
+.src-line { margin-top: 10px; font-size: 14px; line-height: 1.85; color: var(--note); }
 .soon-msg { background: var(--panel); border: 1px dashed var(--gold); border-radius: 6px; padding: 22px; text-align: center; color: var(--text-muted); font-size: 17px; }
 body.show-drafts .soon-msg { display: none; }
 
@@ -400,6 +404,9 @@ a.node:hover { filter: brightness(1.05); }
 .form .f-actions .btn-solid { font-size: 18px; padding: 0 34px; }
 .form .f-hint { font-size: 14px; color: var(--grey-dark); }
 @media (max-width: 900px) { .form .f-grid { grid-template-columns: 1fr; } .about-box { padding: 20px; } }
+
+.f-status { font-size: 16px; color: var(--navy); font-weight: 600; min-height: 1.5em; }
+.form { position: relative; }
 
 .log-table { border: 1px solid var(--gold); border-radius: 6px; overflow: hidden; overflow-x: auto; }
 .log-row { display: grid; grid-template-columns: 140px minmax(0, 1fr) 200px minmax(0, 1.4fr); font-size: 15px; color: var(--text-soft); background: #fff; border-top: 1px solid var(--gold); min-width: 640px; }

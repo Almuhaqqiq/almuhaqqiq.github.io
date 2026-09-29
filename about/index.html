@@ -48,7 +48,7 @@
     <h2>حدود العمل</h2>
     <ul>
       <li><strong>النطاق:</strong> الأحاديث المرفوعة وآثار الصحابة فقط.</li>
-      <li><strong>ما ليس من عملنا:</strong> الأخبار والوقائع والادعاءات التاريخية؛ فمحلها موقع «كفوا ألسنتكم عنهم» <span class="internal-note" style="display:inline;margin:0">[رابط الموقع — ينتظر القرار]</span>.</li>
+      <li><strong>ما ليس من عملنا:</strong> الأخبار والوقائع والادعاءات التاريخية؛ فمحلها موقع <a href="https://kuffo-alsinatakum.github.io/" style="color:var(--gold-dark);font-weight:600" rel="noopener">«كفوا ألسنتكم عنهم»</a>.</li>
       <li><strong>طبيعة المرحلة الحالية:</strong> نشر أبحاث مكتملة الدراسة. وأداة تحليل الإسناد التي يُدخل فيها الزائر إسنادًا قادمة لاحقًا، وتُربط بتطبيق «الإسناد».</li>
       <li><strong>ما لا يُنشر:</strong> لا يُنشر شيء بلا تخريج، ولا يوضع في «الثابت» طريقٌ لم يُدرس، ويُفصل دائمًا بين ما يقوله النص وما يُستنبط منه.</li>
     </ul>
@@ -58,16 +58,14 @@
     <h2>التواصل والتصويبات</h2>
     <p>بابُ التصويبات مفتوح دائمًا. من وجد خطأً في تخريج أو نقل أو حكم فليدُلّنا عليه، ويُنشر التصويب إذا ثبت الخطأ، مع بيان موضعه وتاريخه.</p>
     <div class="soon-msg">طريق التواصل وإرسال التصويبات قيد الإعداد، وسيُعلَن هنا قريبًا.</div>
-    <div class="mail-box placeholder">
-      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a2a5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-      <span style="font-size:16px;color:var(--text-soft)">البريد:</span>
-      <b>[بريد الموقع — ينتظر القرار]</b>
-    </div>
-
-    <!-- نموذج الملاحظات: GitHub Pages لا يستقبل النماذج. الحل المقترح خدمة مثل Formspree (لم يُقرَّر بعد).
-         عند اعتماد الخدمة: ضع رابطها في action، وأزل onsubmit وdisabled من الزر. -->
-    <form class="form placeholder" action="#" method="post" onsubmit="return false">
+    <!-- لا يُنشر عنوان بريد في الموقع: الرسائل تصل عبر نموذج Formspree إلى بريد صاحب المشروع.
+         لتفعيل النموذج: استبدل REPLACE_ME في action بمعرّف النموذج من Formspree،
+         ثم احذف كلمة placeholder من وسم form، واحذف سطر soon-msg أعلاه. -->
+    <form class="form placeholder" data-contact-form action="https://formspree.io/f/REPLACE_ME" method="post">
       <h3>نموذج ملاحظة أو تصويب</h3>
+      <!-- حقل فخّ للروبوتات: يتركه الزائر الحقيقي فارغًا -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+      <input type="hidden" name="_subject" value="ملاحظة جديدة من موقع المحقق">
       <div class="f-grid">
         <div class="f-field"><label for="f1">البحث المعني (عنوانه أو رابطه)</label><input id="f1" name="research" type="text"></div>
         <div class="f-field"><label for="f2">موضع الملاحظة</label>
@@ -83,9 +81,10 @@
         <div class="f-field"><label for="f6">البريد للرد (اختياري)</label><input id="f6" name="email" type="email"></div>
       </div>
       <div class="f-actions">
-        <button type="submit" class="btn-solid" disabled title="سيُفعَّل عند اعتماد خدمة استقبال النماذج">إرسال الملاحظة</button>
-        <span class="f-hint">ذكرُ المصدر بالجزء والصفحة يعجّل النظر في الملاحظة. (الإرسال غير مفعّل بعد.)</span>
+        <button type="submit" class="btn-solid">إرسال الملاحظة</button>
+        <span class="f-hint">ذكرُ المصدر بالجزء والصفحة يعجّل النظر في الملاحظة.</span>
       </div>
+      <div class="f-status" data-form-status role="status" aria-live="polite"></div>
     </form>
   </section>
 
