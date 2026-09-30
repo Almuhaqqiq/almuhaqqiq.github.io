@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المُحَقِّق — تحليل إسناد</title>
+<meta name="description" content="أدخل نص الحديث لتعرف هل درسناه، وتطّلع على تقريره ومشجرته.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body data-base="../" data-active="tahlil" id="top">
+
+<main>
+<div class="container page" style="gap:22px">
+
+  <div>
+    <h1 style="font-size:38px">تحليل إسناد</h1>
+    <p class="intro" style="margin-top:6px">اكتب أو الصق نص الحديث، فنبحث في الأحاديث التي درسناها، ونعرض لك تقريرها ومشجرتها. وإن لم نجده قلنا لك ذلك، ولم نحكم من عندنا.</p>
+  </div>
+
+  <form id="tahlil-form" class="form tl-form">
+    <div class="f-field">
+      <label for="tahlil-text">نص الحديث (بالتشكيل أو بدونه، كاملًا أو جزءًا منه)</label>
+      <textarea id="tahlil-text" rows="5" placeholder="الصق نص الحديث هنا…"></textarea>
+    </div>
+    <div class="f-actions"><button class="btn" type="submit">حلّل</button></div>
+  </form>
+
+  <div id="tahlil-out" aria-live="polite"></div>
+
+  <div class="hl dashed"><strong>حدود الأداة:</strong> تطابق ما تكتبه مع أبحاثنا المنشورة فقط، ولا تحكم على حديث لم يُدرس بمنهج الموقع. تُضاف الأبحاث واحدًا بعد واحد.</div>
+
+</div>
+</main>
+
+<script src="../assets/js/site.js"></script>
+<script src="../assets/data/hadith-index.js"></script>
+<script src="../assets/js/isnad.js"></script>
+<script src="../assets/js/tahlil.js"></script>
+</body>
+</html>

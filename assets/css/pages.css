@@ -457,3 +457,16 @@ details.path-one > summary { cursor: pointer; padding: 10px 4px; font-size: 15px
 .diff-list { margin: 4px 0 0; padding-inline-start: 20px; }
 .diff-list li { margin: 3px 0; line-height: 1.7; }
 .badge-in.wd-b { background: #fff3d6; color: #7a4a00; border: 1px solid #d9b45a; }
+
+/* أداة تحليل إسناد */
+.tl-form textarea { width: 100%; font-family: inherit; font-size: 18px; line-height: 1.9; }
+.tl-card { border: 1px solid var(--gold); border-radius: 8px; background: #fffdf5; padding: 16px 20px; margin-bottom: 16px; }
+.tl-card.ok { border-color: #2d7d2d; }
+.tl-card.no { border-color: #a02020; }
+.tl-badge { display: inline-block; background: #2d7d2d; color: #fff; font-size: 13px; font-weight: 700; border-radius: 10px; padding: 2px 12px; }
+.tl-badge.no { background: #a02020; }
+.tl-verdict { font-weight: 700; color: var(--green, #1a5c1a); }
+.tl-stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+.tl-stats div { flex: 1 1 130px; text-align: center; border: 1px solid var(--gold); border-radius: 6px; padding: 8px; background: #fff; }
+.tl-stats b { display: block; font-size: 26px; color: var(--navy); }
+.tl-notes { line-height: 1.9; padding-inline-start: 20px; }

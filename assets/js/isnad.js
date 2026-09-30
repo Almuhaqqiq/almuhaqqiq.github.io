@@ -7,6 +7,7 @@
    بيانات الرواة (window.ISNAD.narrators): الاسم كما في السند ← {full, v (الحكم), cls, m (الطبقة والوفاة), flags, src}. */
 (function () {
   'use strict';
+  function run() {
   var D = window.ISNAD;
   if (!D) return;
   var NAR = D.narrators || {};
@@ -260,4 +261,7 @@
     D.paths.forEach(function (p) { p.low.forEach(function (l, i) { if (i < p.low.length - 1) addRow(l[0]); }); });
     tableEl.innerHTML = '<div class="table-wrap"><table class="tbl"><thead><tr><th>الراوي</th><th>الحكم (للعلم)</th><th>الطبقة والوفاة</th><th>تنبيهات</th><th>المصدر</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
   }
+  }
+  window.MuhaqqiqTrees = { render: run };
+  run();
 })();

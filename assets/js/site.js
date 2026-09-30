@@ -38,10 +38,10 @@
         '</a>' +
         '<div class="header-tools">' +
           '<nav class="main-nav" aria-label="القائمة الرئيسية">' + nav + '</nav>' +
-          '<div class="tool-soon" title="أداة تحليل الإسناد — قريبًا">' +
+          '<a class="tool-soon" href="' + base + 'tahlil/" title="أداة تحليل الإسناد">' +
             '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>' +
-            '<span>تحليل إسناد</span><span class="tag">قريبًا</span>' +
-          '</div>' +
+            '<span>تحليل إسناد</span><span class="tag">جرّبه</span>' +
+          '</a>' +
         '</div>' +
       '</div>' +
       '<div class="header-rule"></div>' +

@@ -65,6 +65,7 @@ main { flex: 1; }
 .main-nav a:hover { color: var(--gold); }
 .main-nav a.active { color: var(--gold); font-weight: 700; border-bottom-color: var(--gold); }
 
+a.tool-soon { text-decoration: none; color: inherit; }
 .tool-soon {
   display: flex; align-items: center; gap: 8px; border: 1px solid var(--gold);
   border-radius: 22px; padding: 7px 14px; color: var(--pale); font-size: 14px;
