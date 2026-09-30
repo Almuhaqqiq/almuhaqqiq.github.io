@@ -81,7 +81,15 @@
 
   /* ---------- 3) الطباعة ونسخ الرابط ---------- */
   document.querySelectorAll('[data-print]').forEach(function (b) {
-    b.addEventListener('click', function () { window.print(); });
+    b.addEventListener('click', function () {
+      var old = b.textContent;
+      try { window.print(); } catch (e) {}
+      // داخل إطار معزول (كمعاينة مؤقتة) قد تُمنع الطباعة: نرشد الزائر بدل أن يبقى الزر صامتًا
+      if (window.top !== window.self) {
+        b.textContent = 'افتح الصفحة في نافذة مستقلة ثم Ctrl+P';
+        setTimeout(function () { b.textContent = old; }, 4000);
+      }
+    });
   });
   document.querySelectorAll('[data-copy-link]').forEach(function (b) {
     b.addEventListener('click', function () {

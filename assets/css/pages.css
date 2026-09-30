@@ -334,6 +334,21 @@ a.node:hover { filter: brightness(1.05); }
 .node.bad { border-color: #a02020; } .node.bad .n-name { background: #c94040; } .node.bad .n-sub { color: #a02020; }
 .node.kufi { border-color: #9b59b6; } .node.kufi .n-name { background: #6a3aaa; } .node.kufi .n-sub { color: #6a3aaa; }
 .node.mudalis { border-color: #b05a10; } .node.mudalis .n-name { background: #e07a20; } .node.mudalis .n-sub { color: #9a4f0a; }
+/* مشجرات متعددة الطرق */
+details.bk-group { background: var(--panel); border: 1px solid var(--gold); border-radius: 6px; padding: 0 16px; }
+details.bk-group > summary { cursor: pointer; padding: 14px 4px; font-family: var(--font-head); font-weight: 700; font-size: 20px; color: var(--navy); }
+details.bk-group > summary small { font-family: var(--font-body); font-weight: 400; font-size: 14px; color: var(--note); }
+details.path-one { border-top: 1px solid #e0d4b0; }
+details.path-one > summary { cursor: pointer; padding: 10px 4px; font-size: 15px; color: var(--text-soft); }
+.path-body { padding: 8px 4px 18px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.tree-scroll { overflow-x: auto; background: var(--panel); border: 1px solid var(--gold); border-radius: 6px; padding: 22px 12px; }
+.tree-scroll .tree { min-width: max-content; }
+.tree-scroll .branches { flex-direction: row !important; }
+.tree-scroll .branch { flex: 0 0 auto; min-width: 190px; padding-inline: 6px; }
+.tree-scroll .branch::before, .tree-scroll .branch::after { display: block !important; }
+.tree-scroll .branch { padding-top: 24px !important; }
+.node.thiqa.madar, .node.exempt.madar, .node.madar { border: 3px solid var(--gold); }
+.node.exempt { border-color: #8a8378; } .node.exempt .n-name { background: #57534a; } .node.exempt .n-sub { color: #57534a; }
 .node.book { border: 3px solid var(--gold); } .node.book .n-name { background: var(--navy); } .node.book .n-sub { color: var(--navy); }
 .node.madar { border: 3px solid var(--gold); }
 .node.both { border-color: #b05a10; }
@@ -420,3 +435,25 @@ a.node:hover { filter: brightness(1.05); }
   .page { padding-block: 0; }
   .node .n-name, .node.both .n-heads span, .road-label, .banner-navy, .statement, .thead { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* أزرار تكبير/تصغير المشجرات العريضة */
+.zoom-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 6px 0; }
+.zoom-bar button { font: inherit; font-size: 14px; padding: 5px 12px; border: 1px solid var(--gold); background: #fff; border-radius: 6px; cursor: pointer; }
+.zoom-bar button:hover { background: var(--panel); }
+.zoom-lab { font-size: 13px; color: #6b6248; margin-inline-start: 6px; }
+@media print { .zoom-bar { display: none; } }
+.tree-scroll.wide .branch { min-width: 120px; padding-inline: 3px; }
+.tree-scroll.wide .branch .node { width: 116px; }
+.tree-scroll.wide .node .n-name { font-size: 12px; padding: 5px 4px; }
+.tree-scroll.wide .node .n-sub { font-size: 10px; padding: 3px 4px; }
+.tree-scroll.wide .edge span { font-size: 10px; }
+@media print {
+  main, .sec, .path-body, details.bk-group, details.path-one { max-width: 100% !important; min-width: 0 !important; }
+  .tree-scroll { overflow: hidden !important; max-width: 100% !important; }
+  details.path-one, .node, .tree { break-inside: avoid; }
+}
+.matn-box { margin-top: 12px; padding: 10px 14px; border: 1px dashed var(--gold); border-radius: 6px; background: #fffdf5; font-size: 15px; }
+.matn-box .quote { margin: 6px 0 10px; }
+.diff-list { margin: 4px 0 0; padding-inline-start: 20px; }
+.diff-list li { margin: 3px 0; line-height: 1.7; }
+.badge-in.wd-b { background: #fff3d6; color: #7a4a00; border: 1px solid #d9b45a; }
